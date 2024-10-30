@@ -2,6 +2,10 @@
 <script>
     import { onMount } from 'svelte';
 
+
+    const apiKey = import.meta.env.VITE_API_KEY;
+    console.log("API Key:" ,apiKey);
+
     let map;
     let marker;
 
@@ -23,7 +27,7 @@
                 }));
             d[l] ? console.warn(p + " only loads once. Ignoring:", g) : d[l] = (f, ...n) => r.add(f) && u().then(() => d[l](f, ...n))
         })({
-            key: "AIzaSyDhEt6Yj7fgNaOEO1z7DwjUkTfmJynck54",  // Replace with your API key
+            key: import.meta.env.VITE_API_KEY,  // Replace with your API key
             v: "weekly"
         });
 
